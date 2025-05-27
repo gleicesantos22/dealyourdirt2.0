@@ -1,0 +1,298 @@
+[
+  {
+    "id": 1,
+    "title": "Ultimate Digital Deck",
+    "images": [
+      "/p1_img1.jpg",
+      "/p1_img2.jpg",
+      "/p1_img3.jpg",
+      "/p1_img4.jpg",
+      "/p1_img5.jpg",
+      "/p1_img6.jpg",
+      "/p1_img7.jpg",
+      "/p1_img8.jpg"
+    ],
+    "price": 4254.75,
+    "originalPrice": 14591.9,
+    "discountPercent": 71,
+    "rating": 5,
+    "tagline": "Save 71%",
+
+    "ratingCount": 14123,
+    "savePercent": 71,
+
+    "highlights": [
+      { "emoji": "🔞", "text": "140x Naughty & Flirty Challenges" },
+      { "emoji": "🔄", "text": "ALL Digital Decks In One!" },
+      { "emoji": "💖", "text": "Relationship Therapist Approved" },
+      { "emoji": "🔥", "text": "Drink if you refuse a challenge" },
+      { "emoji": "✅", "text": "Guaranteed to get you lucky" }
+    ],
+
+    "accordionItems": [
+      {
+        "title": "Instant App Access 📧",
+        "content": [
+          "Access to the Deal You Dirty app with your Digital Decks is automatically delivered to your email.",
+          "Adding even more spicy challenges picked by the public, relationship therapist approved, to give you a night you'll never forget."
+        ]
+      },
+      {
+        "title": "How To Play 🧑‍🤝‍🧑",
+        "content": [
+          "With your partner, alternate drawing a card from the pack top side down.",
+          "If you draw a \"...or drink\" card, you must do what it says or drink.",
+          "If you draw a \"drink if...\" card, the card applies to both players. Whoever relates to it must drink."
+        ]
+      },
+      {
+        "title": "What To Expect Playing 🤭",
+        "content": [
+          "Expect lots of laughter, fun, and possibly ending up in the bedroom..",
+          "With 140 prompts designed for intimacy, love, & deepening connection.",
+          "& let the digital deck seal the deal. 🥳"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Digital Deck | EXPANSION",
+    "images": ["/p2_img1.jpg", "/p2_img2.jpg", "/p2_img3.jpg"],
+    "price": 1214.02,
+    "originalPrice": 2440.24,
+    "discountPercent": 50,
+    "rating": 4.89,
+    "tagline": "Save 50%",
+    "ratingCount": 14123,
+    "savePercent": 50,
+
+    "highlights": [
+      { "emoji": "🥳", "text": "Extremely Wild Challenges" },
+      { "emoji": "🔥", "text": "Drink if you refuse a challenge" },
+      { "emoji": "💖", "text": "Relationship Therapist Approved" },
+      { "emoji": "✅", "text": "Guaranteed to get you lucky" },
+      { "emoji": "🔄", "text": "Receive new challenges monthly" }
+    ],
+
+    "accordionItems": [
+      {
+        "title": "How To Play",
+        "content": [
+          "With your partner, alternate drawing a card from the pack.",
+          "If you draw a \"...or drink\" card, you must do what it says or drink.",
+          "If you draw a \"drink if...\" card, the card applies to both players. Whoever relates to it must drink."
+        ]
+      },
+      {
+        "title": "Shipping & Returns",
+        "content": [
+          "Shipping is immediate. You'll find your digital deck in your inbox immediately after you place your order.",
+          "No returns for any digital orders."
+        ]
+      },
+      {
+        "title": "What To Expect Playing",
+        "content": [
+          "Expect lots of laughter, fun possibly ending up in the bedroom..",
+          "With 30 prompts designed to make unforgettable memories and a sexy experience."
+        ]
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "KINKY EDITION | Digital Version",
+    "images": [
+      "/p3_img1.jpg",
+      "/p3_img2.jpg",
+      "/p3_img3.jpg",
+      "/p3_img4.jpg",
+      "/p3_img5.jpg",
+      "/p3_img6.jpg",
+      "/p3_img7.jpg"
+    ],
+    "price": 3049.08,
+    "originalPrice": 7320.72,
+    "discountPercent": 58,
+    "rating": 4.89,
+    "tagline": "Save 58%",
+    "ratingCount": 14123,
+    "savePercent": 58,
+
+    "highlights": [
+      { "emoji": "🔞", "text": "50x Naughty & Flirty challenges" },
+      { "emoji": "🔥", "text": "Drink if you refuse a challenge" },
+      { "emoji": "💖", "text": "Relationship Therapist Approved" },
+      { "emoji": "✅", "text": "Guaranteed to get you lucky" }
+    ],
+
+    "accordionItems": [
+      {
+        "title": "Instant Delivery 📧",
+        "content": [
+          "Adding even more spicy challenges picked by the public, relationship therapist approved, to give you a night you'll never forget.",
+          "The Digital Deck is automatically delivered to your email just like any other digital deck."
+        ]
+      },
+      {
+        "title": "How To Play 🧑‍🤝‍🧑",
+        "content": [
+          "With your partner, alternate drawing a card from the pack top side down.",
+          "If you draw a \"...or drink\" card, you must do what it says or drink.",
+          "If you draw a \"drink if...\" card, the card applies to both players. Whoever relates to it must drink."
+        ]
+      },
+      {
+        "title": "What To Expect Playing 🤭",
+        "content": [
+          "Expect lots of laughter, fun and possibly ending up in the bedroom..",
+          "With 50 prompts designed for intimacy, love, & deepening connection.",
+          "& let the digital deck seal the deal. 🥳"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "STANDARD EDITION | Digital Version",
+    "images": [
+      "/p4_img1.jpg",
+      "/p4_img2.jpg",
+      "/p4_img3.jpg",
+      "/p4_img4.jpg",
+      "/p4_img5.jpg",
+      "/p4_img6.jpg",
+      "/p4_img7.jpg",
+      "/p4_img8.jpg"
+    ],
+    "price": 3659.14,
+    "originalPrice": 7320.72,
+    "discountPercent": 50,
+    "rating": 4.89,
+    "tagline": "Save 50%",
+    "ratingCount": 14123,
+    "savePercent": 50,
+
+    "highlights": [
+      { "emoji": "🔞", "text": "50x Naughty & Flirty challenges" },
+      { "emoji": "🔥", "text": "Drink if you refuse a challenge" },
+      { "emoji": "💖", "text": "Relationship Therapist Approved" },
+      { "emoji": "✅", "text": "Guaranteed to get you lucky" }
+    ],
+
+    "accordionItems": [
+      {
+        "title": "Instant Delivery 📧",
+        "content": [
+          "Adding even more spicy challenges picked by the public, relationship therapist approved, to give you a night you'll never forget.",
+          "The Digital Deck is automatically delivered to your email just like any other digital deck."
+        ]
+      },
+      {
+        "title": "How To Play 🧑‍🤝‍🧑",
+        "content": [
+          "With your partner, alternate drawing a card from the pack top side down.",
+          "If you draw a \"...or drink\" card, you must do what it says or drink.",
+          "If you draw a \"drink if...\" card, the card applies to both players. Whoever relates to it must drink."
+        ]
+      },
+      {
+        "title": "What To Expect Playing 🤭",
+        "content": [
+          "Expect lots of laughter, fun and possibly ending up in the bedroom..",
+          "With 50 prompts designed for intimacy, love, & deepening connection.",
+          "& let the digital deck seal the deal. 🥳"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Digital Date-Night Bundle",
+    "images": [
+      "/p5_img1.jpg",
+      "/p5_img2.jpg",
+      "/p5_img3.jpg",
+      "/p5_img4.jpg",
+      "/p5_img5.jpg",
+      "/p5_img6.jpg",
+      "/p5_img7.jpg",
+      "/p5_img8.jpg"
+    ],
+    "price": 3654.97,
+    "originalPrice": 14619.87,
+    "discountPercent": 75,
+    "rating": 4.89,
+    "tagline": "Save 75%",
+    "ratingCount": 14123,
+    "savePercent": 75,
+
+    "highlights": [
+      { "emoji": "🔢", "text": "Best-Sellers for the price of 1" },
+      { "emoji": "🔥", "text": "350+ Flirty & Dirty Dates/Dares/Questions" },
+      { "emoji": "✅", "text": "Guaranteed to get you lucky" },
+      { "emoji": "❤️", "text": "Over 40,000+ Couples Love It!" }
+    ],
+
+    "accordionItems": [
+      {
+        "title": "What's Included",
+        "content": [
+          "6 of our best-sellers in digital form. So you can access it all now.",
+          "- Dirty Deck",
+          "- Kinky Edition",
+          "- 100 Shades of Play",
+          "- Digital Deck",
+          "- Digital Expansion",
+          "- Counselor Date-Night Ideas"
+        ]
+      },
+      {
+        "title": "Play From Your Phone 📱",
+        "content": [
+          "Access to the Deal You Dirty app with your Digital Decks is automatically delivered to your email.",
+          "Adding even more spicy challenges picked by the public, relationship therapist approved, to give you a night you'll never forget."
+        ]
+      }
+    ]
+  },
+
+  {
+    "id": 6,
+    "title": "Date Night Ideas Bundle",
+    "images": [
+      "/p6_img1.jpg",
+      "/p6_img2.jpg",
+      "/p6_img3.jpg",
+      "/p6_img4.jpg",
+      "/p6_img5.jpg",
+      "/p6_img6.jpg"
+    ],
+    "price": 1212.23,
+    "originalPrice": 2436.65,
+    "discountPercent": 50,
+    "rating": 4.89,
+    "tagline": "Save 50%",
+    "ratingCount": 14123,
+    "savePercent": 50,
+
+    "highlights": [
+      { "emoji": "🥳", "text": "80 Romantic & Spicy Date Ideas" },
+      { "emoji": "❤️", "text": "Created by a relationship counselor" },
+      { "emoji": "✅", "text": "Instant digital delivery to your device" },
+      { "emoji": "🗂️", "text": "Sorted by benefits, difficulty, & budget" },
+      { "emoji": "⭐", "text": "Memories that'll last a lifetime" },
+      { "emoji": "🎁", "text": "Valentines Sale Ends: Tonight" }
+    ],
+
+    "accordionItems": [
+      {
+        "title": "Instant Online Delivery 📶",
+        "content": [
+          "These date-night ideas are sent to your email to be downloaded digitally, so you can enjoy them instantly!"
+        ]
+      }
+    ]
+  }
+]

@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import Banner from "@/components/Banner";
 import MarqueeBanner from "@/components/MarqueeBanner";
 import AppProviders from "@/components/AppProviders"; // Import your client wrapper here
+import Head from "next/head"; // Import Next.js Head component to modify the head of the document
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,6 +25,14 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        {/* Add the external script here */}
+        <script
+          type="text/javascript"
+          src="https://assets.mycartpanda.com/cartx-ecomm-ui-assets/js/cpsales.js"
+          async
+        ></script>
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
@@ -31,7 +40,7 @@ export default function RootLayout({ children }) {
         <AppProviders>
           <Header />
           <Banner />
-          {children}
+          {children} {/* Render dynamic content for each page */}
           <Footer />
         </AppProviders>
       </body>

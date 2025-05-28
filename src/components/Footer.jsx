@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export default function Footer() {
   const logos = [
@@ -22,15 +23,21 @@ export default function Footer() {
             <a href="#" className="hover:text-black transition">
               Search
             </a>
-            <a href="#" className="hover:text-black transition">
+            <Link
+              href="/privacy-policy"
+              className="hover:text-black transition"
+            >
               Privacy Policy
-            </a>
-            <a href="#" className="hover:text-black transition">
+            </Link>
+            <Link href="/refund-policy" className="hover:text-black transition">
               Refund Policy
-            </a>
-            <a href="#" className="hover:text-black transition">
+            </Link>
+            <Link
+              href="/terms-of-service"
+              className="hover:text-black transition"
+            >
               Terms of Service
-            </a>
+            </Link>
             <a href="#" className="hover:text-black transition">
               Contact Us
             </a>

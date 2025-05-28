@@ -12,15 +12,14 @@
       "/p1_img7.jpg",
       "/p1_img8.jpg"
     ],
-    "price": 4254.75,
-    "originalPrice": 14591.9,
-    "discountPercent": 71,
+    "price": 69.9,
+    "originalPrice": 99.9,
+    "discountPercent": 30,
     "rating": 5,
-    "tagline": "Save 71%",
-
+    "tagline": "Save 30%",
+    "checkoutUrl": "https://lucas-digitalbr.mycartpanda.com/checkout/185488848:1",
     "ratingCount": 14123,
-    "savePercent": 71,
-
+    "savePercent": 30,
     "highlights": [
       { "emoji": "🔞", "text": "140x Naughty & Flirty Challenges" },
       { "emoji": "🔄", "text": "ALL Digital Decks In One!" },
@@ -28,7 +27,6 @@
       { "emoji": "🔥", "text": "Drink if you refuse a challenge" },
       { "emoji": "✅", "text": "Guaranteed to get you lucky" }
     ],
-
     "accordionItems": [
       {
         "title": "Instant App Access 📧",
@@ -59,14 +57,14 @@
     "id": 2,
     "title": "Digital Deck | EXPANSION",
     "images": ["/p2_img1.jpg", "/p2_img2.jpg", "/p2_img3.jpg"],
-    "price": 1214.02,
-    "originalPrice": 2440.24,
-    "discountPercent": 50,
+    "price": 39.9,
+    "originalPrice": 52.9,
+    "discountPercent": 25,
     "rating": 4.89,
-    "tagline": "Save 50%",
+    "tagline": "Save 25%",
+    "checkoutUrl": "https://lucas-digitalbr.mycartpanda.com/checkout/185489181:180",
     "ratingCount": 14123,
-    "savePercent": 50,
-
+    "savePercent": 25,
     "highlights": [
       { "emoji": "🥳", "text": "Extremely Wild Challenges" },
       { "emoji": "🔥", "text": "Drink if you refuse a challenge" },
@@ -74,7 +72,6 @@
       { "emoji": "✅", "text": "Guaranteed to get you lucky" },
       { "emoji": "🔄", "text": "Receive new challenges monthly" }
     ],
-
     "accordionItems": [
       {
         "title": "How To Play",
@@ -112,21 +109,20 @@
       "/p3_img6.jpg",
       "/p3_img7.jpg"
     ],
-    "price": 3049.08,
-    "originalPrice": 7320.72,
-    "discountPercent": 58,
+    "price": 33.9,
+    "originalPrice": 33.9,
+    "discountPercent": 0,
     "rating": 4.89,
-    "tagline": "Save 58%",
+    "tagline": "No Discount",
+    "checkoutUrl": "https://lucas-digitalbr.mycartpanda.com/checkout/185488909:1",
     "ratingCount": 14123,
-    "savePercent": 58,
-
+    "savePercent": 0,
     "highlights": [
       { "emoji": "🔞", "text": "50x Naughty & Flirty challenges" },
       { "emoji": "🔥", "text": "Drink if you refuse a challenge" },
       { "emoji": "💖", "text": "Relationship Therapist Approved" },
       { "emoji": "✅", "text": "Guaranteed to get you lucky" }
     ],
-
     "accordionItems": [
       {
         "title": "Instant Delivery 📧",
@@ -166,21 +162,20 @@
       "/p4_img7.jpg",
       "/p4_img8.jpg"
     ],
-    "price": 3659.14,
-    "originalPrice": 7320.72,
-    "discountPercent": 50,
+    "price": 39.9,
+    "originalPrice": 52.9,
+    "discountPercent": 25,
     "rating": 4.89,
-    "tagline": "Save 50%",
+    "tagline": "Save 25%",
+    "checkoutUrl": "https://lucas-digitalbr.mycartpanda.com/checkout/185489141:1",
     "ratingCount": 14123,
-    "savePercent": 50,
-
+    "savePercent": 25,
     "highlights": [
       { "emoji": "🔞", "text": "50x Naughty & Flirty challenges" },
       { "emoji": "🔥", "text": "Drink if you refuse a challenge" },
       { "emoji": "💖", "text": "Relationship Therapist Approved" },
       { "emoji": "✅", "text": "Guaranteed to get you lucky" }
     ],
-
     "accordionItems": [
       {
         "title": "Instant Delivery 📧",
@@ -220,21 +215,20 @@
       "/p5_img7.jpg",
       "/p5_img8.jpg"
     ],
-    "price": 3654.97,
-    "originalPrice": 14619.87,
-    "discountPercent": 75,
+    "price": 50,
+    "originalPrice": "",
+    "discountPercent": 31,
     "rating": 4.89,
-    "tagline": "Save 75%",
+    "tagline": "Save 31%",
+    "checkoutUrl": "https://lucas-digitalbr.mycartpanda.com/checkout/185489252:1",
     "ratingCount": 14123,
-    "savePercent": 75,
-
+    "savePercent": 31,
     "highlights": [
       { "emoji": "🔢", "text": "Best-Sellers for the price of 1" },
       { "emoji": "🔥", "text": "350+ Flirty & Dirty Dates/Dares/Questions" },
       { "emoji": "✅", "text": "Guaranteed to get you lucky" },
       { "emoji": "❤️", "text": "Over 40,000+ Couples Love It!" }
     ],
-
     "accordionItems": [
       {
         "title": "What's Included",
@@ -257,7 +251,6 @@
       }
     ]
   },
-
   {
     "id": 6,
     "title": "Date Night Ideas Bundle",
@@ -269,14 +262,14 @@
       "/p6_img5.jpg",
       "/p6_img6.jpg"
     ],
-    "price": 1212.23,
-    "originalPrice": 2436.65,
+    "price": 24.9,
+    "originalPrice": 35.9,
     "discountPercent": 50,
     "rating": 4.89,
     "tagline": "Save 50%",
+    "checkoutUrl": "https://lucas-digitalbr.mycartpanda.com/checkout/185489036:1",
     "ratingCount": 14123,
     "savePercent": 50,
-
     "highlights": [
       { "emoji": "🥳", "text": "80 Romantic & Spicy Date Ideas" },
       { "emoji": "❤️", "text": "Created by a relationship counselor" },
@@ -285,7 +278,6 @@
       { "emoji": "⭐", "text": "Memories that'll last a lifetime" },
       { "emoji": "🎁", "text": "Valentines Sale Ends: Tonight" }
     ],
-
     "accordionItems": [
       {
         "title": "Instant Online Delivery 📶",

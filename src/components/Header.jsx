@@ -1,27 +1,39 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import Link from "next/link";
+import React, { useState, useEffect, useRef } from "react";
+import { useRouter } from "next/navigation";
+import { useSearch } from "./SearchContext"; // your context hook, optional
+import products from "@/data/products.json";
 
 export default function Header() {
+  const router = useRouter();
+
+  // Cart states
   const [cartOpen, setCartOpen] = useState(false);
   const [cartItems, setCartItems] = useState([]);
-  const [timeLeft, setTimeLeft] = useState(600); // Set 10 minutes (600 seconds)
-  const [discreetPackaging, setDiscreetPackaging] = useState(false); // for the discreet packaging toggle
+  const [timeLeft, setTimeLeft] = useState(600);
+  const [discreetPackaging, setDiscreetPackaging] = useState(false);
+  const discreetAmount = 549.05;
 
-  const discreetAmount = 549.05; // Amount to be added if discreet packaging is on
+  // Search states
+  const { setFilteredProductId } = useSearch();
+  const [searchOpen, setSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
+  const searchRef = useRef(null);
 
+  // Timer for cart
   useEffect(() => {
     const timer = setInterval(() => {
       setTimeLeft((prev) => {
         if (prev <= 0) {
-          clearInterval(timer); // Stop timer when countdown reaches 0
+          clearInterval(timer);
           return 0;
         }
         return prev - 1;
       });
-    }, 1000); // Update every second
-
-    // Clean up the interval on component unmount
+    }, 1000);
     return () => clearInterval(timer);
   }, []);
 
@@ -34,7 +46,7 @@ export default function Header() {
     )}`;
   };
 
-  // Load cart from localStorage, normalize qty & price
+  // Load cart from localStorage
   useEffect(() => {
     const stored = localStorage.getItem("cart");
     if (stored) {
@@ -57,19 +69,16 @@ export default function Header() {
     localStorage.setItem("cart", JSON.stringify(cartItems));
   }, [cartItems]);
 
-  const removeFromCart = (id) => {
+  // Cart handlers
+  const removeFromCart = (id) =>
     setCartItems((prev) => prev.filter((item) => item.id !== id));
-  };
-
-  const incrementQty = (id) => {
+  const incrementQty = (id) =>
     setCartItems((prev) =>
       prev.map((item) =>
         item.id === id ? { ...item, qty: item.qty + 1 } : item
       )
     );
-  };
-
-  const decrementQty = (id) => {
+  const decrementQty = (id) =>
     setCartItems((prev) =>
       prev.map((item) =>
         item.id === id
@@ -77,32 +86,59 @@ export default function Header() {
           : item
       )
     );
-  };
 
-  // Calculate total price and total quantity using qty
+  // Cart totals
   const totalPrice = cartItems.reduce(
     (total, item) => total + item.price * item.qty,
     0
   );
-
   const totalQuantity = cartItems.reduce((sum, item) => sum + item.qty, 0);
-
-  // Add discreet packaging if the toggle is on
   const finalAmount = discreetPackaging
     ? totalPrice + discreetAmount
     : totalPrice;
 
-  // Calculate discount savings
-  const savedAmount = discreetPackaging ? discreetAmount : 0;
-  const discountedPrice = totalPrice + savedAmount;
+  // Search filter
+  useEffect(() => {
+    if (searchQuery.trim() === "") {
+      setSearchResults([]);
+      return;
+    }
+    const results = products.filter((p) =>
+      p.title.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+    setSearchResults(results);
+  }, [searchQuery]);
+
+  // Close search dropdown on outside click
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (searchRef.current && !searchRef.current.contains(event.target)) {
+        setSearchOpen(false);
+        setSearchQuery("");
+        setSearchResults([]);
+      }
+    }
+    if (searchOpen) document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [searchOpen]);
+
+  // On search product click — redirect
+  const handleProductClick = (id) => {
+    setFilteredProductId?.(id); // optional: update filter context if you use it
+    router.push(`/products/${id}`);
+    setSearchOpen(false);
+    setSearchQuery("");
+  };
 
   return (
     <>
       <header className="bg-black flex justify-between items-center px-6 h-32 md:h-32 shadow-lg relative z-50">
         <div className="flex items-center space-x-3">
-          <img src="/logo.avif" alt="Logo" className="h-15 w-auto" />
+          <Link href="/" className="flex items-center">
+            <img src="/logo.avif" alt="Logo" className="h-15 w-auto" />
+          </Link>
         </div>
-        <div className="flex items-center space-x-5">
+        <div className="flex items-center space-x-5 relative">
           <div className="flex items-center gap-2.5">
             <img
               src="/usa_flag.png"
@@ -115,10 +151,12 @@ export default function Header() {
             </span>
           </div>
 
+          {/* Search Button */}
           <button
             aria-label="Search"
-            className="text-white hover:text-pink-500 transition"
+            className="text-red-400 hover:text-pink-500 transition relative"
             type="button"
+            onClick={() => setSearchOpen((open) => !open)}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -134,8 +172,40 @@ export default function Header() {
                 d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 1111.25 3a7.5 7.5 0 015.4 12.65z"
               />
             </svg>
+
+            {/* Search dropdown */}
+            {searchOpen && (
+              <div
+                ref={searchRef}
+                className="absolute top-full right-0 mt-2 w-72 bg-white rounded shadow-lg z-50 p-3"
+              >
+                <input
+                  type="text"
+                  placeholder="Search products..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  autoFocus
+                  className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-pink-500"
+                />
+                <div className="mt-2 max-h-60 overflow-y-auto">
+                  {searchResults.length === 0 && searchQuery !== "" && (
+                    <p className="text-gray-500 text-sm">No results found.</p>
+                  )}
+                  {searchResults.map((product) => (
+                    <div
+                      key={product.id}
+                      className="cursor-pointer px-2 py-1 hover:bg-pink-100 rounded"
+                      onClick={() => handleProductClick(product.id)}
+                    >
+                      {product.title}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
           </button>
 
+          {/* Cart Button */}
           <button
             aria-label="Cart"
             className="relative text-white hover:text-pink-500 transition"
@@ -166,10 +236,13 @@ export default function Header() {
         </div>
       </header>
 
+      {/* Cart modal (your original JSX) */}
       {cartOpen && (
         <>
-          <div onClick={() => setCartOpen(false)} className="" />
-
+          <div
+            onClick={() => setCartOpen(false)}
+            className="fixed inset-0 bg-black opacity-30 z-50"
+          />
           <aside className="fixed top-0 right-0 h-full w-full sm:w-2/3 md:w-1/2 lg:w-1/3 bg-white shadow-lg z-60 flex flex-col">
             <div className="flex justify-between items-center p-4 border-b">
               <div className="flex items-center justify-center gap-2">
@@ -178,7 +251,6 @@ export default function Header() {
                   {cartItems.length}
                 </div>
               </div>
-
               <button
                 aria-label="Close cart"
                 className="text-gray-600 hover:text-gray-900"
@@ -250,7 +322,6 @@ export default function Header() {
               )}
             </div>
 
-            {/* Discreet Packaging Section */}
             {cartItems.length > 0 && (
               <div className="p-4 border-t flex flex-col justify-between items-center">
                 <div className="flex items-center gap-6">
@@ -262,7 +333,7 @@ export default function Header() {
                   <span className="font-semibold">Discreet Packaging</span>
                   <span className="text-sm text-gray-500">
                     Tk {discreetAmount}
-                  </span>{" "}
+                  </span>
                   <button
                     className={`p-2 rounded-full ${
                       discreetPackaging ? "bg-green-500" : "bg-gray-300"

@@ -93,21 +93,15 @@ const Accordion = ({ items }) => {
 
 // Main ProductDetails Component
 export default function ProductDetails({ product }) {
+  // Redirect to checkout URL instead of adding to cart
   const handleAddToCart = () => {
-    const storedCart = localStorage.getItem("cart");
-    let cart = storedCart ? JSON.parse(storedCart) : [];
-
-    const existingItem = cart.find((item) => item.id === product.id);
-    if (existingItem) {
-      // Optional: increase qty or alert already in cart
-      alert(`"${product.title}" is already in cart.`);
-      return;
+    if (product.checkoutUrl) {
+      window.location.href = product.checkoutUrl;
+    } else {
+      alert("Checkout URL not available.");
     }
-
-    cart.push({ ...product, qty: 1 });
-    localStorage.setItem("cart", JSON.stringify(cart));
-    alert(`Added "${product.title}" to cart!`);
   };
+
   return (
     <>
       <div className="flex flex-col md:flex-row p-6 space-y-8 md:space-x-8 md:space-y-0 max-w-7xl mx-auto">
@@ -137,7 +131,7 @@ export default function ProductDetails({ product }) {
           {/* Price and Save */}
           <div className="flex items-center gap-4 mb-6">
             <span className="text-3xl font-extrabold text-red-600">
-              Tk{" "}
+              ${" "}
               {product.price.toLocaleString(undefined, {
                 minimumFractionDigits: 2,
               })}
@@ -145,7 +139,7 @@ export default function ProductDetails({ product }) {
             {product.originalPrice && (
               <>
                 <span className="line-through text-gray-400">
-                  Tk{" "}
+                  ${" "}
                   {product.originalPrice.toLocaleString(undefined, {
                     minimumFractionDigits: 2,
                   })}
@@ -169,7 +163,7 @@ export default function ProductDetails({ product }) {
             </ul>
           )}
 
-          {/* Add to cart */}
+          {/* Add to cart (redirect to checkout) */}
           <button
             onClick={handleAddToCart}
             className="w-full bg-red-600 text-white rounded-full py-4 font-semibold hover:bg-red-700 transition"
@@ -201,14 +195,14 @@ export default function ProductDetails({ product }) {
           <h3 className="font-semibold text-lg truncate">{product.title}</h3>
           <div className="flex items-center gap-2 whitespace-nowrap">
             <span className="text-red-600 font-extrabold text-xl">
-              Tk{" "}
+              ${" "}
               {product.price.toLocaleString(undefined, {
                 minimumFractionDigits: 2,
               })}
             </span>
             {product.originalPrice && (
               <span className="line-through text-gray-400 text-sm">
-                Tk{" "}
+                ${" "}
                 {product.originalPrice.toLocaleString(undefined, {
                   minimumFractionDigits: 2,
                 })}

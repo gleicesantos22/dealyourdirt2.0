@@ -63,50 +63,8 @@ function StarRating({ rating }) {
 }
 
 export default function ProductGrid() {
-  const [cart, setCart] = React.useState([]);
-  const [showMsg, setShowMsg] = React.useState(false);
-  const [msg, setMsg] = React.useState("");
-
-  React.useEffect(() => {
-    const storedCart = localStorage.getItem("cart");
-    if (storedCart) {
-      setCart(JSON.parse(storedCart));
-    }
-  }, []);
-
-  const addToCart = (product) => {
-    setCart((prevCart) => {
-      const existing = prevCart.find((item) => item.id === product.id);
-      let newCart;
-      if (existing) {
-        setMsg(`"${product.title}" is already in cart`);
-        setShowMsg(true);
-        setTimeout(() => setShowMsg(false), 2000);
-        return prevCart;
-      } else {
-        newCart = [...prevCart, { ...product, qty: 1 }];
-        setMsg(`Added "${product.title}" to cart!`);
-        setShowMsg(true);
-        setTimeout(() => setShowMsg(false), 2000);
-        localStorage.setItem("cart", JSON.stringify(newCart));
-        return newCart;
-      }
-    });
-  };
-
-  React.useEffect(() => {
-    if (cart.length > 0) {
-      localStorage.setItem("cart", JSON.stringify(cart));
-    }
-  }, [cart]);
-
   return (
     <section className="px-6 md:px-20 py-12 bg-gradient-to-b from-[#611A5F] to-[#4950A9] min-h-screen relative">
-      {showMsg && (
-        <div className="fixed top-4 right-4 bg-black bg-opacity-80 text-white px-4 py-2 rounded shadow-lg z-50 transition-opacity">
-          {msg}
-        </div>
-      )}
       <div className="max-w-7xl mx-auto">
         <p className="text-white font-semibold text-md mb-5 flex items-center gap-2">
           Instant Delivery to Your Email{" "}
@@ -135,11 +93,11 @@ export default function ProductGrid() {
                 <button
                   onClick={(e) => {
                     e.preventDefault();
-                    addToCart(product);
+                    window.location.href = product.checkoutUrl;
                   }}
                   className="absolute bottom-4 right-4 bg-black text-white rounded-full px-4 py-2 text-sm hover:opacity-70 transition font-semibold"
                 >
-                  Add to cart
+                  Buy Now
                 </button>
               </div>
 
@@ -148,14 +106,14 @@ export default function ProductGrid() {
                 <h3 className="font-semibold text-lg mt-2">{product.title}</h3>
                 <div>
                   <span className="text-pink-600 font-semibold text-lg">
-                    Tk{" "}
+                    ${" "}
                     {product.price.toLocaleString(undefined, {
                       minimumFractionDigits: 2,
                     })}
                   </span>
                   {product.originalPrice && (
                     <span className="text-gray-400 line-through ml-2">
-                      Tk{" "}
+                      ${" "}
                       {product.originalPrice.toLocaleString(undefined, {
                         minimumFractionDigits: 2,
                       })}

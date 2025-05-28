@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import Footer from "@/components/Footer";
 import Banner from "@/components/Banner";
 import MarqueeBanner from "@/components/MarqueeBanner";
+import AppProviders from "@/components/AppProviders"; // Import your client wrapper here
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,12 +27,13 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-
-        <MarqueeBanner></MarqueeBanner>
-        <Header></Header>
-        <Banner></Banner>
-        {children}
-        <Footer></Footer>
+        <MarqueeBanner />
+        <AppProviders>
+          <Header />
+          <Banner />
+          {children}
+          <Footer />
+        </AppProviders>
       </body>
     </html>
   );

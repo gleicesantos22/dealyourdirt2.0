@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { useCurrency } from "../CurrencyContext"; // Import your currency context hook
 
 // Star Icon Component
 const StarIcon = () => (
@@ -93,6 +94,17 @@ const Accordion = ({ items }) => {
 
 // Main ProductDetails Component
 export default function ProductDetails({ product }) {
+  const { currency } = useCurrency(); // Get currency from context
+  const USD_TO_EURO_RATE = 0.92;
+
+  // Helper to format price with currency
+  const formatPrice = (amount) => {
+    if (currency === "EURO") {
+      return `€${(amount * USD_TO_EURO_RATE).toFixed(2)}`;
+    }
+    return `$${amount.toFixed(2)}`;
+  };
+
   // Redirect to checkout URL instead of adding to cart
   const handleAddToCart = () => {
     if (product.checkoutUrl) {
@@ -131,18 +143,12 @@ export default function ProductDetails({ product }) {
           {/* Price and Save */}
           <div className="flex items-center gap-4 mb-6">
             <span className="text-3xl font-extrabold text-red-600">
-              ${" "}
-              {product.price.toLocaleString(undefined, {
-                minimumFractionDigits: 2,
-              })}
+              {formatPrice(product.price)}
             </span>
             {product.originalPrice && (
               <>
                 <span className="line-through text-gray-400">
-                  ${" "}
-                  {product.originalPrice.toLocaleString(undefined, {
-                    minimumFractionDigits: 2,
-                  })}
+                  {formatPrice(product.originalPrice)}
                 </span>
                 <span className="text-xs bg-red-500 text-white rounded-full px-2 py-1">
                   Save {product.savePercent ?? product.discountPercent ?? 0}%
@@ -195,17 +201,11 @@ export default function ProductDetails({ product }) {
           <h3 className="font-semibold text-lg truncate">{product.title}</h3>
           <div className="flex items-center gap-2 whitespace-nowrap">
             <span className="text-red-600 font-extrabold text-xl">
-              ${" "}
-              {product.price.toLocaleString(undefined, {
-                minimumFractionDigits: 2,
-              })}
+              {formatPrice(product.price)}
             </span>
             {product.originalPrice && (
               <span className="line-through text-gray-400 text-sm">
-                ${" "}
-                {product.originalPrice.toLocaleString(undefined, {
-                  minimumFractionDigits: 2,
-                })}
+                {formatPrice(product.originalPrice)}
               </span>
             )}
           </div>

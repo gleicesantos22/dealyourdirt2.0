@@ -1,8 +1,9 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Link from "next/link";
 import products from "../data/products.json"; // Adjust path accordingly
+import { useCurrency } from "./CurrencyContext"; // Import currency context hook
 
 function HoverImage({ defaultSrc, hoverSrc, alt }) {
   return (
@@ -63,6 +64,16 @@ function StarRating({ rating }) {
 }
 
 export default function ProductGrid() {
+  const { currency } = useCurrency(); // get currency from context
+  const USD_TO_EURO_RATE = 0.92;
+
+  const formatPrice = (amount) => {
+    if (currency === "EURO") {
+      return `€${(amount * USD_TO_EURO_RATE).toFixed(2)}`;
+    }
+    return `$${amount.toFixed(2)}`;
+  };
+
   return (
     <section className="px-6 md:px-20 py-12 bg-gradient-to-b from-[#611A5F] to-[#4950A9] min-h-screen relative">
       <div className="max-w-7xl mx-auto">
@@ -106,17 +117,11 @@ export default function ProductGrid() {
                 <h3 className="font-semibold text-lg mt-2">{product.title}</h3>
                 <div>
                   <span className="text-pink-600 font-semibold text-lg">
-                    ${" "}
-                    {product.price.toLocaleString(undefined, {
-                      minimumFractionDigits: 2,
-                    })}
+                    {formatPrice(product.price)}
                   </span>
                   {product.originalPrice && (
                     <span className="text-gray-400 line-through ml-2">
-                      ${" "}
-                      {product.originalPrice.toLocaleString(undefined, {
-                        minimumFractionDigits: 2,
-                      })}
+                      {formatPrice(product.originalPrice)}
                     </span>
                   )}
                 </div>

@@ -4,6 +4,7 @@ import Link from "next/link";
 import React, { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { useSearch } from "./SearchContext"; // your context hook, optional
+import { useCurrency } from "./CurrencyContext"; // <-- Import your currency context hook
 import products from "@/data/products.json";
 
 export default function Header() {
@@ -23,6 +24,20 @@ export default function Header() {
   const [searchResults, setSearchResults] = useState([]);
   const searchRef = useRef(null);
 
+  // Use currency context instead of local state
+  const { currency, setCurrency } = useCurrency();
+
+  // Conversion rate constant (USD -> EURO)
+  const USD_TO_EURO_RATE = 0.92;
+
+  // Format price helper based on currency
+  const formatPrice = (amount) => {
+    if (currency === "EURO") {
+      return `€${(amount * USD_TO_EURO_RATE).toFixed(2)}`;
+    }
+    return `$${amount.toFixed(2)}`;
+  };
+
   // Timer for cart
   useEffect(() => {
     const timer = setInterval(() => {
@@ -36,15 +51,6 @@ export default function Header() {
     }, 1000);
     return () => clearInterval(timer);
   }, []);
-
-  const formatTime = (time) => {
-    const minutes = Math.floor(time / 60);
-    const seconds = time % 60;
-    return `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(
-      2,
-      "0"
-    )}`;
-  };
 
   // Load cart from localStorage
   useEffect(() => {
@@ -139,16 +145,23 @@ export default function Header() {
           </Link>
         </div>
         <div className="flex items-center space-x-5 relative">
+          {/* Updated currency selector */}
           <div className="flex items-center gap-2.5">
             <img
-              src="/usa_flag.png"
-              alt="US Flag"
+              src={currency === "USD" ? "/usa_flag.png" : "/eur.jpg"}
+              alt={currency === "USD" ? "US Flag" : "Euro Flag"}
               className="w-5 h-5 md:w-6 md:h-6 rounded-full object-cover"
               loading="lazy"
             />
-            <span className="text-white font-semibold text-sm md:text-base select-none">
-              USD $
-            </span>
+            <select
+              value={currency}
+              onChange={(e) => setCurrency(e.target.value)}
+              className="bg-black text-white font-semibold text-sm md:text-base select-none cursor-pointer border border-white rounded px-1"
+              aria-label="Select currency"
+            >
+              <option value="USD">USD $</option>
+              <option value="EURO">EURO €</option>
+            </select>
           </div>
 
           {/* Search Button */}
@@ -305,10 +318,13 @@ export default function Header() {
                     </div>
                     <div className="text-right">
                       <p className="font-semibold">
-                        Tk{" "}
-                        {(item.price * item.qty).toLocaleString(undefined, {
-                          minimumFractionDigits: 2,
-                        })}
+                        {currency === "EURO"
+                          ? `€${(
+                              item.price *
+                              item.qty *
+                              USD_TO_EURO_RATE
+                            ).toFixed(2)}`
+                          : `$${(item.price * item.qty).toFixed(2)}`}
                       </p>
                       <button
                         className="text-red-600 text-xs hover:underline"
@@ -332,7 +348,9 @@ export default function Header() {
                   />
                   <span className="font-semibold">Discreet Packaging</span>
                   <span className="text-sm text-gray-500">
-                    Tk {discreetAmount}
+                    {currency === "EURO"
+                      ? `€${discreetAmount * USD_TO_EURO_RATE}`
+                      : `Tk ${discreetAmount}`}
                   </span>
                   <button
                     className={`p-2 rounded-full ${
@@ -357,10 +375,9 @@ export default function Header() {
               >
                 <span className="text-center flex-grow">Checkout</span>
                 <span className="ml-4">
-                  Tk{" "}
-                  {finalAmount.toLocaleString(undefined, {
-                    minimumFractionDigits: 2,
-                  })}
+                  {currency === "EURO"
+                    ? `€${(finalAmount * USD_TO_EURO_RATE).toFixed(2)}`
+                    : `Tk ${finalAmount.toFixed(2)}`}
                 </span>
               </button>
             </div>

@@ -1,7 +1,12 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
+import { useCurrency } from "./CurrencyContext"; // import currency context
 
 export default function Footer() {
+  const { currency, setCurrency } = useCurrency();
+
   const logos = [
     { src: "/amex.svg", alt: "Amex" },
     { src: "/apple_pay.png", alt: "Apple Pay" },
@@ -20,9 +25,6 @@ export default function Footer() {
         <div className="flex flex-col space-y-3 md:space-y-4 max-w-xs">
           <h3 className="font-semibold text-lg">Footer menu</h3>
           <nav className="flex flex-col space-y-2 text-gray-600 text-base">
-            {/* <a href="#" className="hover:text-black transition">
-              Search
-            </a> */}
             <Link
               href="/privacy-policy"
               className="hover:text-black transition"
@@ -38,9 +40,6 @@ export default function Footer() {
             >
               Terms of Service
             </Link>
-            {/* <a href="#" className="hover:text-black transition">
-              Contact Us
-            </a> */}
           </nav>
         </div>
 
@@ -53,32 +52,26 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Bottom row: United States + copyright + Logos */}
+      {/* Bottom row: Currency selector + copyright + Logos */}
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 md:gap-0">
-        {/* United States + copyright */}
-        <div className="flex flex-col items-center md:items-start space-y-2 cursor-pointer select-none mb-6 md:mb-0 gap-10">
+        {/* Currency selector */}
+        <div className="flex flex-col items-center md:items-start space-y-2 cursor-pointer select-none mb-6 md:mb-0 gap-4">
           <div className="flex items-center space-x-2">
             <img
-              src="/usa_flag.png"
-              alt="US Flag"
+              src={currency === "USD" ? "/usa_flag.png" : "/eur.jpg"}
+              alt={currency === "USD" ? "US Flag" : "Euro Flag"}
               className="w-5 h-5 rounded-full object-cover bg-amber-50"
               loading="lazy"
             />
-            <span className="font-semibold">United States (USD $)</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-4 w-4"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth="2"
+            <select
+              value={currency}
+              onChange={(e) => setCurrency(e.target.value)}
+              className="font-semibold text-base border border-gray-300 rounded px-2 py-1 cursor-pointer"
+              aria-label="Select currency"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M19 9l-7 7-7-7"
-              />
-            </svg>
+              <option value="USD">United States (USD $)</option>
+              <option value="EURO">Europe (EURO €)</option>
+            </select>
           </div>
           <div className="text-gray-600 text-base">© 2025, Deal You Dirty.</div>
         </div>

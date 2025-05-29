@@ -57,12 +57,12 @@
     "id": 2,
     "title": "Digital Deck | EXPANSION",
     "images": ["/p2_img1.jpg", "/p2_img2.jpg", "/p2_img3.jpg"],
-    "price": 39.9,
-    "originalPrice": 52.9,
+    "price": 9.9,
+    "originalPrice": 19.9,
     "discountPercent": 25,
     "rating": 4.89,
     "tagline": "Save 25%",
-    "checkoutUrl": "https://lucas-digitalbr.mycartpanda.com/checkout/185489181:180",
+    "checkoutUrl": "https://lucas-digitalbr.mycartpanda.com/checkout/185554576:1",
     "ratingCount": 14123,
     "savePercent": 25,
     "highlights": [
@@ -162,12 +162,12 @@
       "/p4_img7.jpg",
       "/p4_img8.jpg"
     ],
-    "price": 39.9,
-    "originalPrice": 52.9,
+    "price": 29.9,
+    "originalPrice": 59.9,
     "discountPercent": 25,
     "rating": 4.89,
     "tagline": "Save 25%",
-    "checkoutUrl": "https://lucas-digitalbr.mycartpanda.com/checkout/185489141:1",
+    "checkoutUrl": "https://lucas-digitalbr.mycartpanda.com/checkout/185554392:1",
     "ratingCount": 14123,
     "savePercent": 25,
     "highlights": [
@@ -215,12 +215,12 @@
       "/p5_img7.jpg",
       "/p5_img8.jpg"
     ],
-    "price": 50,
-    "originalPrice": "",
+    "price": 29.9,
+    "originalPrice": 119.9,
     "discountPercent": 31,
     "rating": 4.89,
     "tagline": "Save 31%",
-    "checkoutUrl": "https://lucas-digitalbr.mycartpanda.com/checkout/185489252:1",
+    "checkoutUrl": "https://lucas-digitalbr.mycartpanda.com/checkout/185554691:1",
     "ratingCount": 14123,
     "savePercent": 31,
     "highlights": [
@@ -253,36 +253,179 @@
   },
   {
     "id": 6,
-    "title": "Date Night Ideas Bundle",
-    "images": [
-      "/p6_img1.jpg",
-      "/p6_img2.jpg",
-      "/p6_img3.jpg",
-      "/p6_img4.jpg",
-      "/p6_img5.jpg",
-      "/p6_img6.jpg"
-    ],
-    "price": 24.9,
-    "originalPrice": 35.9,
-    "discountPercent": 50,
+    "title": "100 Shades of Playing",
+    "images": ["/p6_img1.jpg", "/p6_img2.jpg"],
+    "price": 39.9,
+    "originalPrice": 52.9,
+    "discountPercent": 0,
     "rating": 4.89,
-    "tagline": "Save 50%",
-    "checkoutUrl": "https://lucas-digitalbr.mycartpanda.com/checkout/185489036:1",
+    "tagline": "Save 40%",
+    "checkoutUrl": "https://lucas-digitalbr.mycartpanda.com/checkout/185544259:1",
     "ratingCount": 14123,
-    "savePercent": 50,
+    "savePercent": 40,
     "highlights": [
-      { "emoji": "🥳", "text": "80 Romantic & Spicy Date Ideas" },
-      { "emoji": "❤️", "text": "Created by a relationship counselor" },
-      { "emoji": "✅", "text": "Instant digital delivery to your device" },
-      { "emoji": "🗂️", "text": "Sorted by benefits, difficulty, & budget" },
-      { "emoji": "⭐", "text": "Memories that'll last a lifetime" },
-      { "emoji": "🎁", "text": "Valentines Sale Ends: Tonight" }
+      { "emoji": "🔞", "text": "50x Naughty & Flirty challenges" },
+      { "emoji": "🔥", "text": "Drink if you refuse a challenge" },
+      { "emoji": "💖", "text": "Relationship Therapist Approved" },
+      { "emoji": "✅", "text": "Guaranteed to get you lucky" }
     ],
     "accordionItems": [
       {
-        "title": "Instant Online Delivery 📶",
+        "title": "Instant Delivery 📧",
         "content": [
-          "These date-night ideas are sent to your email to be downloaded digitally, so you can enjoy them instantly!"
+          "Adding even more spicy challenges picked by the public, relationship therapist approved, to give you a night you'll never forget.",
+          "The Digital Deck is automatically delivered to your email just like any other digital deck."
+        ]
+      },
+      {
+        "title": "How To Play 🧑‍🤝‍🧑",
+        "content": [
+          "With your partner, alternate drawing a card from the pack top side down.",
+          "If you draw a \"...or drink\" card, you must do what it says or drink.",
+          "If you draw a \"drink if...\" card, the card applies to both players. Whoever relates to it must drink."
+        ]
+      },
+      {
+        "title": "What To Expect Playing 🤭",
+        "content": [
+          "Expect lots of laughter, fun and possibly ending up in the bedroom..",
+          "With 50 prompts designed for intimacy, love, & deepening connection.",
+          "& let the digital deck seal the deal. 🥳"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "title": "80 Date Night Ideas",
+    "images": ["/p7_img1.jpg", "/p7_img2.jpg", "/p7_img3.jpg", "/p7_img4.jpg"],
+    "price": 49.8,
+    "originalPrice": 69.8,
+    "discountPercent": 30,
+    "rating": 5,
+    "tagline": "Save 30%",
+    "checkoutUrl": "https://lucas-digitalbr.mycartpanda.com/checkout/185539368:1",
+    "ratingCount": 14123,
+    "savePercent": 30,
+    "highlights": [
+      { "emoji": "🔞", "text": "140x Naughty & Flirty Challenges" },
+      { "emoji": "🔄", "text": "ALL Digital Decks In One!" },
+      { "emoji": "💖", "text": "Relationship Therapist Approved" },
+      { "emoji": "🔥", "text": "Drink if you refuse a challenge" },
+      { "emoji": "✅", "text": "Guaranteed to get you lucky" }
+    ],
+    "accordionItems": [
+      {
+        "title": "Instant App Access 📧",
+        "content": [
+          "Access to the Deal You Dirty app with your Digital Decks is automatically delivered to your email.",
+          "Adding even more spicy challenges picked by the public, relationship therapist approved, to give you a night you'll never forget."
+        ]
+      },
+      {
+        "title": "How To Play 🧑‍🤝‍🧑",
+        "content": [
+          "With your partner, alternate drawing a card from the pack top side down.",
+          "If you draw a \"...or drink\" card, you must do what it says or drink.",
+          "If you draw a \"drink if...\" card, the card applies to both players. Whoever relates to it must drink."
+        ]
+      },
+      {
+        "title": "What To Expect Playing 🤭",
+        "content": [
+          "Expect lots of laughter, fun, and possibly ending up in the bedroom..",
+          "With 140 prompts designed for intimacy, love, & deepening connection.",
+          "& let the digital deck seal the deal. 🥳"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "title": "40 Spicy Date Night Ideas",
+    "images": ["/p8_img1.jpg", "/p8_img2.jpg", "/p8_img3.jpg"],
+    "price": 24.9,
+    "originalPrice": 34.9,
+    "discountPercent": 30,
+    "rating": 5,
+    "tagline": "Save 30%",
+    "checkoutUrl": "https://lucas-digitalbr.mycartpanda.com/checkout/185535178:1",
+    "ratingCount": 14123,
+    "savePercent": 30,
+    "highlights": [
+      { "emoji": "🔞", "text": "140x Naughty & Flirty Challenges" },
+      { "emoji": "🔄", "text": "ALL Digital Decks In One!" },
+      { "emoji": "💖", "text": "Relationship Therapist Approved" },
+      { "emoji": "🔥", "text": "Drink if you refuse a challenge" },
+      { "emoji": "✅", "text": "Guaranteed to get you lucky" }
+    ],
+    "accordionItems": [
+      {
+        "title": "Instant App Access 📧",
+        "content": [
+          "Access to the Deal You Dirty app with your Digital Decks is automatically delivered to your email.",
+          "Adding even more spicy challenges picked by the public, relationship therapist approved, to give you a night you'll never forget."
+        ]
+      },
+      {
+        "title": "How To Play 🧑‍🤝‍🧑",
+        "content": [
+          "With your partner, alternate drawing a card from the pack top side down.",
+          "If you draw a \"...or drink\" card, you must do what it says or drink.",
+          "If you draw a \"drink if...\" card, the card applies to both players. Whoever relates to it must drink."
+        ]
+      },
+      {
+        "title": "What To Expect Playing 🤭",
+        "content": [
+          "Expect lots of laughter, fun, and possibly ending up in the bedroom..",
+          "With 140 prompts designed for intimacy, love, & deepening connection.",
+          "& let the digital deck seal the deal. 🥳"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "title": "40 Date Night Ideas",
+    "images": ["/p9_img1.jpg", "/p9_img2.jpg", "/p9_img3.jpg"],
+    "price": 24.9,
+    "originalPrice": 34.9,
+    "discountPercent": 30,
+    "rating": 5,
+    "tagline": "Save 30%",
+    "checkoutUrl": "https://lucas-digitalbr.mycartpanda.com/checkout/185534856:1",
+    "ratingCount": 14123,
+    "savePercent": 30,
+    "highlights": [
+      { "emoji": "🔞", "text": "140x Naughty & Flirty Challenges" },
+      { "emoji": "🔄", "text": "ALL Digital Decks In One!" },
+      { "emoji": "💖", "text": "Relationship Therapist Approved" },
+      { "emoji": "🔥", "text": "Drink if you refuse a challenge" },
+      { "emoji": "✅", "text": "Guaranteed to get you lucky" }
+    ],
+    "accordionItems": [
+      {
+        "title": "Instant App Access 📧",
+        "content": [
+          "Access to the Deal You Dirty app with your Digital Decks is automatically delivered to your email.",
+          "Adding even more spicy challenges picked by the public, relationship therapist approved, to give you a night you'll never forget."
+        ]
+      },
+      {
+        "title": "How To Play 🧑‍🤝‍🧑",
+        "content": [
+          "With your partner, alternate drawing a card from the pack top side down.",
+          "If you draw a \"...or drink\" card, you must do what it says or drink.",
+          "If you draw a \"drink if...\" card, the card applies to both players. Whoever relates to it must drink."
+        ]
+      },
+      {
+        "title": "What To Expect Playing 🤭",
+        "content": [
+          "Expect lots of laughter, fun, and possibly ending up in the bedroom..",
+          "With 140 prompts designed for intimacy, love, & deepening connection.",
+          "& let the digital deck seal the deal. 🥳"
         ]
       }
     ]

@@ -20,9 +20,9 @@ export default function Footer() {
         <div className="flex flex-col space-y-3 md:space-y-4 max-w-xs">
           <h3 className="font-semibold text-lg">Footer menu</h3>
           <nav className="flex flex-col space-y-2 text-gray-600 text-base">
-            <a href="#" className="hover:text-black transition">
+            {/* <a href="#" className="hover:text-black transition">
               Search
-            </a>
+            </a> */}
             <Link
               href="/privacy-policy"
               className="hover:text-black transition"
@@ -38,9 +38,9 @@ export default function Footer() {
             >
               Terms of Service
             </Link>
-            <a href="#" className="hover:text-black transition">
+            {/* <a href="#" className="hover:text-black transition">
               Contact Us
-            </a>
+            </a> */}
           </nav>
         </div>
 
